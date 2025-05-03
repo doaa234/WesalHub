@@ -1,0 +1,234 @@
+.file-viewer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.file-viewer-container.light {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #e0e0e0;
+}
+
+.file-viewer-container.dark {
+  background-color: #2d2d2d;
+  color: #f0f0f0;
+  border: 1px solid #444444;
+}
+
+.file-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid;
+}
+
+.file-viewer-container.light .file-viewer-header {
+  background-color: #f5f5f5;
+  border-bottom-color: #e0e0e0;
+}
+
+.file-viewer-container.dark .file-viewer-header {
+  background-color: #3d3d3d;
+  border-bottom-color: #555555;
+}
+
+.file-viewer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.view-mode-button, .close-button, .download-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.file-viewer-container.light .view-mode-button,
+.file-viewer-container.light .close-button,
+.file-viewer-container.light .download-button {
+  background-color: #e9e9e9;
+  color: #333333;
+}
+
+.file-viewer-container.dark .view-mode-button,
+.file-viewer-container.dark .close-button,
+.file-viewer-container.dark .download-button {
+  background-color: #4d4d4d;
+  color: #f0f0f0;
+}
+
+.view-mode-button:hover, .close-button:hover, .download-button:hover {
+  opacity: 0.9;
+}
+
+.view-mode-button.active {
+  font-weight: bold;
+}
+
+.file-viewer-container.light .view-mode-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.file-viewer-container.dark .view-mode-button.active {
+  background-color: #0069d9;
+  color: white;
+}
+
+.file-viewer-content {
+  flex: 1;
+  padding: 16px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.file-loading, .file-error, .unsupported-file {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 16px;
+}
+
+.pdf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.pdf-document {
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+
+.pdf-page {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.pdf-control-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.pdf-control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.file-viewer-container.light .pdf-control-button {
+  background-color: #e9e9e9;
+  color: #333333;
+}
+
+.file-viewer-container.dark .pdf-control-button {
+  background-color: #4d4d4d;
+  color: #f0f0f0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  max-height: 80vh;
+  max-width: 100%;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.file-download-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.file-viewer-container.light .file-download-container {
+  background-color: #f5f5f5;
+}
+
+.file-viewer-container.dark .file-download-container {
+  background-color: #3d3d3d;
+}
+
+.file-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.file-info {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.file-viewer-footer {
+  padding: 12px 16px;
+  border-top: 1px solid;
+  font-size: 14px;
+}
+
+.file-viewer-container.light .file-viewer-footer {
+  background-color: #f5f5f5;
+  border-top-color: #e0e0e0;
+}
+
+.file-viewer-container.dark .file-viewer-footer {
+  background-color: #3d3d3d;
+  border-top-color: #555555;
+}
+
+.file-metadata {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .file-metadata {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .file-viewer-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .file-viewer-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
